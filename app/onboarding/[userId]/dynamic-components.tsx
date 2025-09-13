@@ -36,11 +36,15 @@ function FormField({ options }: { options: string[] }) {
   return (
     <div className="w-full flex flex-col items-start gap-4">
       {options.map((item, i) => (
-        <Button className="w-full h-[80px] flex justify-start" key={i}>
-          {item}
-        </Button>
+        <QuestionChoice key={i} option={item} />
       ))}
     </div>
+  );
+}
+
+function QuestionChoice({ option }: { option: string }) {
+  return (
+    <Button className="w-full h-[80px] flex justify-start">{option}</Button>
   );
 }
 
@@ -74,7 +78,8 @@ function SkipBtn({ onClick }: { onClick: () => void }) {
   return (
     <Button
       onClick={onClick}
-      className="bg-white text-black h-[50px] w-[100px] border border-zinc-200"
+      variant={"outline"}
+      className="h-[50px] w-[100px]"
     >
       Skip
     </Button>
