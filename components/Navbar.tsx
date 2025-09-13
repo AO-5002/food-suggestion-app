@@ -1,7 +1,7 @@
 import React from "react";
 import { ModeToggle } from "./DarkMode";
+import { UserMenu } from "./UserMenu";
 import Link from "next/link";
-import { Item } from "@radix-ui/react-dropdown-menu";
 
 interface NavContent {
   itemName: string;
@@ -12,7 +12,7 @@ function NavItem({ itemName, hrefLink }: NavContent) {
   return (
     <Link
       href={`/${hrefLink}`}
-      className="text-xs text-white opacity-80 hover:opacity-100 "
+      className="text-xs text-foreground opacity-80 hover:opacity-100 dark:text-white"
     >
       {itemName}
     </Link>
@@ -27,11 +27,18 @@ const NavData: NavContent[] = [
 
 function Navbar() {
   return (
-    <nav className="border flex flex-row items-center justify-around gap-4 py-2 h-[36px] bg-black text-zinc-400 rounded-xl">
+    <nav
+      className="flex items-center justify-between h-[36px] py-2
+                bg-foreground/10 backdrop-blur-xl border border-white/20
+                rounded-2xl shadow-lg px-12"
+    >
       {NavData.map((item, i) => (
         <NavItem key={i} itemName={item.itemName} hrefLink={item.hrefLink} />
       ))}
-      <ModeToggle />
+      <div className="border-white/80 w-1/5 pl-8 flex gap-4 justify-around">
+        <ModeToggle />
+        <UserMenu />
+      </div>
     </nav>
   );
 }
