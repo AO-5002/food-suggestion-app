@@ -3,6 +3,7 @@ import { CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { LearnMoreBtn } from "./dynamic-components";
+import ItemLoading from "@/components/Skeletons/ItemLoading";
 
 type SubItemType = {
   icon: React.ReactNode;
@@ -68,6 +69,9 @@ function CardList() {
   return (
     <ScrollArea className="h-[600px] w-full overflow-auto p-2 flex flex-col items-center gap-8">
       <Card />
+      <ItemLoading />
+      <ItemLoading />
+      <ItemLoading />
     </ScrollArea>
   );
 }
