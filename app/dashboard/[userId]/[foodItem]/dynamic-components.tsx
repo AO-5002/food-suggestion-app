@@ -1,14 +1,17 @@
 "use client";
 import OpenAI from "openai";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import {
   Star,
   ScanQrCode,
   ClipboardList,
+  ArrowLeft,
   Copy,
+  CheckCheck,
   StickyNote,
+  Check,
 } from "lucide-react";
 import ToolTipWrapper from "@/components/ToolTipWrapper";
 import { Stick } from "next/font/google";
@@ -58,10 +61,26 @@ function CopyAllBtn() {
 }
 
 function CopyBtn() {
+  const [clicked, setClicked] = useState(false);
+
+  function handleClick() {
+    setClicked(true);
+  }
+
+  useEffect(() => {
+    if (clicked) {
+      const timer = setTimeout(() => setClicked(false), 1000);
+      return () => clearTimeout(timer); // Cleanup on re-render
+    }
+  }, [clicked]);
   return (
     <ToolTipWrapper tooltipText="Copy">
-      <Button variant={"outline"} className="w-8 h-8">
-        <Copy height={8} width={8} />
+      <Button variant={"outline"} onClick={handleClick} className="w-8 h-8">
+        {clicked ? (
+          <Check height={8} width={8} />
+        ) : (
+          <Copy height={8} width={8} />
+        )}
       </Button>
     </ToolTipWrapper>
   );

@@ -47,23 +47,9 @@ function ActionBar() {
   );
 }
 
-interface IngredientListProps {
-  ingredients: string[];
-}
-
-function IngredientList({ ingredients }: IngredientListProps) {
-  return (
-    <ul className="list-disc pl-5">
-      {ingredients.map((ingredient) => (
-        <li key={ingredient}>{ingredient}</li>
-      ))}
-    </ul>
-  );
-}
-
 function Headline({ children }: ChildrenProps) {
   return (
-    <span className="flex flex-row items-center justify-between gap-2 mb-2">
+    <span className="flex flex-row items-center justify-between gap-2 w-full">
       <h1 className="text-2xl font-bold">{children}</h1>
       <CopyBtn />
     </span>
@@ -82,4 +68,64 @@ function VStack({ children }: ChildrenProps) {
   );
 }
 
-export { Headline, TextContent, ImageOverlay, VStack, ActionBar };
+// BELOW ARE THE SECTIONS
+
+function DescriptionSection() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Headline>Description</Headline>
+      <TextContent>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+        recusandae dicta possimus officia omnis expedita cum, corrupti, saepe
+        itaque debitis in? Itaque, obcaecati. Labore quis minima quidem debitis
+        ipsam. Quo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quod sed tempora temporibus iure deleniti dolore ipsum, ut cupiditate
+        architecto quaerat voluptatum fugiat odio, mollitia voluptate. Porro
+        suscipit at autem. Officia.
+      </TextContent>
+    </div>
+  );
+}
+
+function IngredientSection() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Headline>Ingredients</Headline>
+      <TextContent>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+        recusandae dicta possimus officia omnis expedita cum, corrupti, saepe
+        itaque debitis in? Itaque, obcaecati. Labore quis minima quidem debitis
+        ipsam. Quo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quod sed tempora temporibus iure deleniti dolore ipsum, ut cupiditate
+        architecto quaerat voluptatum fugiat odio, mollitia voluptate. Porro
+        suscipit at autem. Officia.
+      </TextContent>
+    </div>
+  );
+}
+
+function CookingSection() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Headline>Cooking</Headline>
+      <TextContent>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+        recusandae dicta possimus officia omnis expedita cum, corrupti, saepe
+        itaque debitis in? Itaque, obcaecati. Labore quis minima quidem debitis
+        ipsam. Quo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quod sed tempora temporibus iure deleniti dolore ipsum, ut cupiditate
+        architecto quaerat voluptatum fugiat odio, mollitia voluptate. Porro
+        suscipit at autem. Officia.
+      </TextContent>
+    </div>
+  );
+}
+
+export {
+  ImageOverlay,
+  VStack,
+  ActionBar,
+  DescriptionSection,
+  IngredientSection,
+  CookingSection,
+};

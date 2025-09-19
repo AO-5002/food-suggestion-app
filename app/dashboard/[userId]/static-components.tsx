@@ -42,6 +42,13 @@ function SubItemList() {
   );
 }
 
+interface CardProps {
+  imgUrl?: string;
+  title?: string;
+  price?: string;
+  orders?: number;
+}
+
 function Card() {
   return (
     <div className="w-full h-[400px] rounded-xl bg-white flex flex-col items-center shadow-lg">
