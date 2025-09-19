@@ -1,5 +1,6 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
+import { RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function LearnMoreBtn() {
@@ -12,4 +13,12 @@ function LearnMoreBtn() {
   return <Button onClick={handleLearn}>Learn More</Button>;
 }
 
-export { LearnMoreBtn };
+function NewGeneration() {
+  return (
+    <Button>
+      <RotateCcw />
+    </Button>
+  );
+}
+
+export { LearnMoreBtn, NewGeneration };

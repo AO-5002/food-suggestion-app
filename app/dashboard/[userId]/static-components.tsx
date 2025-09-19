@@ -2,7 +2,7 @@ import { ShoppingBag } from "lucide-react";
 import { CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { LearnMoreBtn } from "./dynamic-components";
+import { LearnMoreBtn, NewGeneration } from "./dynamic-components";
 import ItemLoading from "@/components/Skeletons/ItemLoading";
 
 type SubItemType = {
@@ -72,6 +72,8 @@ function CardList() {
       <ItemLoading />
       <ItemLoading />
       <ItemLoading />
+      <ItemLoading />
+      <NewGeneration />
     </ScrollArea>
   );
 }

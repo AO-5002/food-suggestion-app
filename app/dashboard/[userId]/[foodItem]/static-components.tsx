@@ -1,4 +1,11 @@
 import Image from "next/image";
+import {
+  CopyAllBtn,
+  QRBtn,
+  StarBtn,
+  CopyBtn,
+  DisplayStatsBtn,
+} from "./dynamic-components";
 
 interface ChildrenProps {
   children: React.ReactNode;
@@ -24,8 +31,43 @@ function ImageOverlay({ children, imgSrc }: ChildrenProps) {
   );
 }
 
+function ActionBar() {
+  return (
+    <div className="flex items-center justify-between w-full border-b pb-2">
+      <div className="flex flex-row items-center gap-4">
+        <StarBtn />
+
+        <DisplayStatsBtn />
+        <QRBtn />
+      </div>
+      <div>
+        <CopyAllBtn />
+      </div>
+    </div>
+  );
+}
+
+interface IngredientListProps {
+  ingredients: string[];
+}
+
+function IngredientList({ ingredients }: IngredientListProps) {
+  return (
+    <ul className="list-disc pl-5">
+      {ingredients.map((ingredient) => (
+        <li key={ingredient}>{ingredient}</li>
+      ))}
+    </ul>
+  );
+}
+
 function Headline({ children }: ChildrenProps) {
-  return <h1 className="text-lg font-bold">{children}</h1>;
+  return (
+    <span className="flex flex-row items-center justify-between gap-2 mb-2">
+      <h1 className="text-2xl font-bold">{children}</h1>
+      <CopyBtn />
+    </span>
+  );
 }
 
 function TextContent({ children }: ChildrenProps) {
@@ -34,10 +76,10 @@ function TextContent({ children }: ChildrenProps) {
 
 function VStack({ children }: ChildrenProps) {
   return (
-    <div className="w-full h-full flex flex-col items-start gap-4">
+    <div className="w-full h-full flex flex-col items-start gap-8">
       {children}
     </div>
   );
 }
 
-export { Headline, TextContent, ImageOverlay, VStack };
+export { Headline, TextContent, ImageOverlay, VStack, ActionBar };

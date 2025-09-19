@@ -2,6 +2,7 @@ import React from "react";
 import { ModeToggle } from "./DarkMode";
 import { UserMenu } from "./UserMenu";
 import Link from "next/link";
+import JournalItem from "./JournalItem";
 
 interface NavContent {
   itemName: string;
@@ -37,6 +38,7 @@ function Navbar() {
       ))}
       <div className="border-white/80 w-1/5 pl-8 flex gap-4 justify-around">
         <ModeToggle />
+        <JournalItem />
         <UserMenu />
       </div>
     </nav>
