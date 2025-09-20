@@ -68,6 +68,10 @@ function VStack({ children }: ChildrenProps) {
   );
 }
 
+function ListContent() {
+  return <div className="flex flex-col items-start justify-center"></div>;
+}
+
 // BELOW ARE THE SECTIONS
 
 function DescriptionSection() {

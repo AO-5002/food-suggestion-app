@@ -1,8 +1,8 @@
 "use client";
-import OpenAI from "openai";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 import {
   Star,
   ScanQrCode,
@@ -65,11 +65,14 @@ function CopyBtn() {
 
   function handleClick() {
     setClicked(true);
+    toast("Copied to Clipboard!");
   }
 
   useEffect(() => {
     if (clicked) {
-      const timer = setTimeout(() => setClicked(false), 1000);
+      const timer = setTimeout(() => {
+        setClicked(false);
+      }, 1000);
       return () => clearTimeout(timer); // Cleanup on re-render
     }
   }, [clicked]);

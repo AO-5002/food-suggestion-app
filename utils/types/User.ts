@@ -86,3 +86,5 @@ interface User extends UserDto {
 }
 
 export type { User, UserDto };
+
+export { CookingAbility, CulturalDishes, CookingTime, Allergies, Diets };
