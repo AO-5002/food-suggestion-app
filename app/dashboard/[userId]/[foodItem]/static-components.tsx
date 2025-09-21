@@ -14,7 +14,7 @@ interface ChildrenProps {
 
 function ImageOverlay({ children, imgSrc }: ChildrenProps) {
   return (
-    <div className="w-full h-1/2 relative">
+    <div className="w-full h-1/4 relative">
       <Image
         src={`/images/${imgSrc}.jpg`}
         alt="Pizza"

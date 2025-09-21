@@ -65,11 +65,11 @@ function CopyBtn() {
 
   function handleClick() {
     setClicked(true);
-    toast("Copied to Clipboard!");
   }
 
   useEffect(() => {
     if (clicked) {
+      toast("Copied to Clipboard!");
       const timer = setTimeout(() => {
         setClicked(false);
       }, 1000);
