@@ -36,7 +36,7 @@ function Navbar() {
       {NavData.map((item, i) => (
         <NavItem key={i} itemName={item.itemName} hrefLink={item.hrefLink} />
       ))}
-      <div className="border-white/80 w-1/5 pl-8 flex gap-4 justify-around">
+      <div className="border-white/80 w-1/3 pl-8 flex gap-4 justify-around">
         <ModeToggle />
         <JournalItem />
         <UserMenu />

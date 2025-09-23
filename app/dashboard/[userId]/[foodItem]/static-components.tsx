@@ -5,6 +5,7 @@ import {
   StarBtn,
   CopyBtn,
   DisplayStatsBtn,
+  ShowLessBtn,
 } from "./dynamic-components";
 
 interface ChildrenProps {
@@ -51,7 +52,10 @@ function Headline({ children }: ChildrenProps) {
   return (
     <span className="flex flex-row items-center justify-between gap-2 w-full">
       <h1 className="text-2xl font-bold">{children}</h1>
-      <CopyBtn />
+      <div className="flex flex-row gap-2 items-center">
+        <ShowLessBtn />
+        <CopyBtn />
+      </div>
     </span>
   );
 }
@@ -68,8 +72,32 @@ function VStack({ children }: ChildrenProps) {
   );
 }
 
-function ListContent() {
-  return <div className="flex flex-col items-start justify-center"></div>;
+function ListItem({ children }: ChildrenProps) {
+  return <li className="text-sm text-zinc-400">{children}</li>;
+}
+
+type ListContentType = {
+  listType: number;
+};
+
+function ListContent({ listType }: ListContentType) {
+  return (
+    <ul
+      className={`w-full flex flex-col items-start ${
+        listType == 1 ? "list-disc" : "list-decimal"
+      } pl-4`}
+    >
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+      <ListItem>Item #1</ListItem>
+    </ul>
+  );
 }
 
 // BELOW ARE THE SECTIONS
@@ -93,24 +121,16 @@ function DescriptionSection() {
 
 function IngredientSection() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="w-full flex flex-col gap-2">
       <Headline>Ingredients</Headline>
-      <TextContent>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-        recusandae dicta possimus officia omnis expedita cum, corrupti, saepe
-        itaque debitis in? Itaque, obcaecati. Labore quis minima quidem debitis
-        ipsam. Quo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Quod sed tempora temporibus iure deleniti dolore ipsum, ut cupiditate
-        architecto quaerat voluptatum fugiat odio, mollitia voluptate. Porro
-        suscipit at autem. Officia.
-      </TextContent>
+      <ListContent listType={1} />
     </div>
   );
 }
 
 function CookingSection() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="w-full flex flex-col gap-2">
       <Headline>Cooking</Headline>
       <TextContent>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci

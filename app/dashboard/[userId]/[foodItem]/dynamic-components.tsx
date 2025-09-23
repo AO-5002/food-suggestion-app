@@ -9,9 +9,10 @@ import {
   ClipboardList,
   ArrowLeft,
   Copy,
-  CheckCheck,
   StickyNote,
+  EyeClosed,
   Check,
+  Minus,
 } from "lucide-react";
 import ToolTipWrapper from "@/components/ToolTipWrapper";
 import { Stick } from "next/font/google";
@@ -89,6 +90,16 @@ function CopyBtn() {
   );
 }
 
+function ShowLessBtn() {
+  return (
+    <ToolTipWrapper tooltipText="Show Less">
+      <Button variant={"outline"} className="w-8 h-8">
+        <Minus />
+      </Button>
+    </ToolTipWrapper>
+  );
+}
+
 function DisplayStatsBtn() {
   return (
     <ToolTipWrapper tooltipText="Display Overview">
@@ -99,4 +110,12 @@ function DisplayStatsBtn() {
   );
 }
 
-export { BackBtn, StarBtn, QRBtn, CopyAllBtn, CopyBtn, DisplayStatsBtn };
+export {
+  BackBtn,
+  StarBtn,
+  QRBtn,
+  CopyAllBtn,
+  CopyBtn,
+  DisplayStatsBtn,
+  ShowLessBtn,
+};
