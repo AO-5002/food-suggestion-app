@@ -4,16 +4,14 @@ import { BackBtn } from "./dynamic-components";
 import { DescriptionSection, IngredientSection } from "./static-components";
 import { ImageOverlay, VStack } from "./static-components";
 import { generateItems } from "@/utils/services/GenerateItems";
-import {
-  User,
-  Allergies,
-  CookingAbility,
-  CulturalDishes,
-  CookingTime,
-  Diets,
-} from "@/utils/types/User";
+import { UserDetails } from "@/utils/types/User";
+import { FoodItem, data } from "@/utils/types/FoodEntries";
 
-async function page() {
+interface PageData {
+  entries: FoodItem[];
+}
+
+async function page({ entries }: PageData) {
   return (
     <PageLayout>
       <div className="w-full h-full flex flex-col items-center gap-4">

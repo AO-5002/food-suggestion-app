@@ -78,8 +78,6 @@ function CardList() {
       <Card />
       <ItemLoading />
       <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
       <NewGeneration />
     </ScrollArea>
   );

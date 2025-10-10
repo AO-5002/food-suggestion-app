@@ -66,6 +66,16 @@ enum Diets {
   LOW_CHOLESTEROL,
 }
 
+type UserDetails = {
+  allergies: Allergies[];
+  budgetRange: number[];
+  cookingAbility: CookingAbility;
+  favCulturalDishes: CulturalDishes[];
+  prefCookingTime: CookingTime;
+  prefDiets: Diets[];
+  quantity: number;
+};
+
 interface UserDto {
   id?: string;
   authId: string;
@@ -74,17 +84,9 @@ interface UserDto {
 }
 
 interface User extends UserDto {
-  userDetails: {
-    allergies: Allergies[];
-    budgetRange: number[];
-    cookingAbility: CookingAbility;
-    favCulturalDishes: CulturalDishes[];
-    prefCookingTime: CookingTime;
-    prefDiets: Diets[];
-    quantity: number;
-  };
+  UserDetails: UserDetails;
 }
 
-export type { User, UserDto };
+export type { User, UserDto, UserDetails };
 
 export { CookingAbility, CulturalDishes, CookingTime, Allergies, Diets };

@@ -1,0 +1,123 @@
+type FoodItem = {
+  name: string;
+  description: string;
+  estimated_cooking_time: string;
+  ingredients: string[];
+  instructions: string[];
+  macros: {
+    calories: number;
+    protein_g: number;
+    carbs_g: number;
+    fat_g: number;
+  };
+  cultural_origin: string;
+  diet_compatibility: string[];
+  cost_estimate_usd: number;
+  difficulty_level: string;
+};
+
+const data: FoodItem[] = [
+  {
+    name: "Quick Mexican Avocado Salad Cups",
+    description:
+      "A fast, keto-friendly Mexican-inspired salad served in romaine leaves: creamy avocado, bright lime, cilantro, and crunchy hemp hearts for plant protein. Ready in under 10 minutes and naturally vegan, halal, and gluten-free.",
+    estimated_cooking_time: "8 minutes",
+    ingredients: [
+      "2 ripe avocados",
+      "1 small red onion, finely diced",
+      "1 jalapeño, seeded and minced (optional)",
+      "1/2 cup fresh cilantro, chopped",
+      "2 limes (zest + juice)",
+      "2 tablespoons extra-virgin olive oil",
+      "3 tablespoons hemp hearts",
+      "6 large romaine lettuce leaves (for cups)",
+      "sea salt and black pepper to taste",
+    ],
+    instructions: [
+      "Halve and dice avocados; place in a bowl and squeeze in lime juice to prevent browning.",
+      "Add diced red onion, minced jalapeño, chopped cilantro, lime zest, olive oil, sea salt and pepper; gently toss to combine.",
+      "Stir in hemp hearts for texture and protein.",
+      "Spoon the avocado mixture into romaine leaves and serve immediately as handheld salad cups.",
+    ],
+    macros: {
+      calories: 420,
+      protein_g: 12,
+      carbs_g: 10,
+      fat_g: 36,
+    },
+    cultural_origin: "Mexican-inspired",
+    diet_compatibility: ["vegan", "keto", "halal", "gluten-free"],
+    cost_estimate_usd: 8,
+    difficulty_level: "beginner",
+  },
+  {
+    name: "10-Minute Indian-Spiced Tofu & Cucumber Bowl",
+    description:
+      "A quick Indian-flavored keto vegan bowl: crumbled extra-firm tofu warmed with turmeric and garam masala, paired with cool cucumber and a dollop of unsweetened coconut yogurt. Gluten-free and halal-friendly.",
+    estimated_cooking_time: "10 minutes",
+    ingredients: [
+      "200 g extra-firm tofu, drained and crumbled",
+      "1/2 teaspoon ground turmeric",
+      "1/2 teaspoon garam masala",
+      "1/4 teaspoon ground cumin",
+      "1 tablespoon olive oil or avocado oil",
+      "1 small cucumber, thinly sliced",
+      "2 tablespoons unsweetened coconut yogurt",
+      "1 tablespoon chopped roasted almonds",
+      "fresh cilantro for garnish",
+      "salt and black pepper to taste",
+    ],
+    instructions: [
+      "Heat oil in a nonstick pan over medium-high heat (about 1 minute).",
+      "Add crumbled tofu, turmeric, garam masala, cumin, salt and pepper; sauté, stirring, for 4–6 minutes until warmed and lightly golden.",
+      "Arrange sliced cucumber in a bowl, add warmed spiced tofu on top, and add a dollop of coconut yogurt.",
+      "Sprinkle chopped roasted almonds and cilantro; serve immediately.",
+    ],
+    macros: {
+      calories: 350,
+      protein_g: 20,
+      carbs_g: 8,
+      fat_g: 24,
+    },
+    cultural_origin: "Indian-inspired",
+    diet_compatibility: ["vegan", "keto", "halal", "gluten-free"],
+    cost_estimate_usd: 8,
+    difficulty_level: "beginner",
+  },
+  {
+    name: "Korean- and Spanish-Inspired Sesame Spinach with Olives",
+    description:
+      "Fast sesame garlic spinach (sigeumchi namul style) with a Spanish twist—smoky smoked paprika and green olives. Tossed with sesame oil and tamari (gluten-free) for a savory, low-carb vegan side or light meal.",
+    estimated_cooking_time: "6 minutes",
+    ingredients: [
+      "4 cups baby spinach (washed)",
+      "1 clove garlic, minced",
+      "1 tablespoon sesame oil",
+      "1 teaspoon gluten-free tamari or coconut aminos",
+      "1 teaspoon lemon juice",
+      "1 tablespoon sliced green olives (pitted)",
+      "1 tablespoon toasted sliced almonds",
+      "1/4 teaspoon smoked paprika",
+      "1 teaspoon sesame seeds",
+      "salt to taste",
+    ],
+    instructions: [
+      "In a large bowl, whisk together sesame oil, minced garlic, tamari, lemon juice and smoked paprika.",
+      "Add baby spinach to the bowl and toss thoroughly so leaves are evenly coated; let sit 1 minute to soften.",
+      "Stir in sliced olives, toasted almonds and sesame seeds.",
+      "Taste and adjust salt or lemon; serve immediately as a side or small main.",
+    ],
+    macros: {
+      calories: 210,
+      protein_g: 7,
+      carbs_g: 6,
+      fat_g: 18,
+    },
+    cultural_origin: "Korean-Spanish fusion",
+    diet_compatibility: ["vegan", "keto", "halal", "gluten-free"],
+    cost_estimate_usd: 9,
+    difficulty_level: "beginner",
+  },
+];
+
+export { data, type FoodItem };
