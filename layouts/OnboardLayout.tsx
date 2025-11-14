@@ -7,12 +7,18 @@ interface OnboardLayoutProps {
 
 function OnboardLayout({ children, questionPrompt }: OnboardLayoutProps) {
   return (
-    <main className="w-full h-screen grid grid-cols-1 md:grid-cols-[360px_1fr] xl:grid-cols-[480px_1fr]">
-      <div className="hidden md:flex flex-col items-center justify-center col-start-1 col-span-1 md:col-start-1 md:col-span-1 xl:col-start-1 bg-foreground text-background border-r border-zinc-200">
+    <main className="w-full min-h-screen flex flex-col md:flex-row">
+      {/* Side Panel - Progress Tracker */}
+      <aside className="hidden md:flex md:w-80 lg:w-96 flex-col items-center justify-center bg-foreground text-background border-r border-zinc-200 flex-shrink-0 sticky top-0 h-screen">
         {questionPrompt}
-      </div>
-      <div className="p-4 md:p-8 col-start-1 col-span-1 md:col-start-2 md:col-span-6 xl:col-start-3 xl:col-span-8 m-12">
-        {children}
+      </aside>
+
+      {/* Main Content Area - Fully Dynamic */}
+      <div className="flex-1 flex items-center justify-center min-h-screen">
+        {/* Container that scales with available space */}
+        <div className="w-full px-6 py-12 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="max-w-4xl mx-auto">{children}</div>
+        </div>
       </div>
     </main>
   );
